@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+#app {
+  display: grid;
+  grid-template-areas: "nav content";
+  grid-template-columns: 49px 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+}
