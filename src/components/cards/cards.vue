@@ -1,5 +1,5 @@
 <template>
-  <div class="cards">
+  <div class="animal-cards">
     <animal-card v-for="(animal, index) in animals" :key="index" :animal="animal" />
   </div>
 </template>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-.cards {
+.animal-cards {
   grid-area: cards;
   background-color: #F7F7F8;
   padding: 5px 10px;
