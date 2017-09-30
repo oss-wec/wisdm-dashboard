@@ -1,31 +1,35 @@
 <template>
   <div class="dash">
     <cards />
-    <div class="map">map</div>
+    <!-- <div class="map-container"> -->
+      <leaflet class="map-container" />
+    <!-- </div> -->
   </div>
 </template>
 
 <script>
 import cards from './cards/cards'
+import leaflet from './Map'
 
 export default {
   name: 'Hello',
 
-  components: { cards }
+  components: { cards, leaflet }
 }
 </script>
 
 <style scoped>
 .dash {
   display: grid;
-  grid-template-areas: "cards map";
+  grid-template-areas: "cards leaflet";
   grid-template-columns: 500px 1fr;
   /* grid-template-rows: 1fr; */
-
 }
 
-.map {
-  grid-area: map;
+.map-container {
+  grid-area: leaflet;
   background-color: purple;
+  height: 100%;
+  width: 100%
 }
 </style>
