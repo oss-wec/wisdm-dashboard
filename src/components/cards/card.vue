@@ -40,20 +40,20 @@
     </div>
 
     <div class="under-card">
-      <span class="icon"><i class="flaticon-worldwide"></i></span>
-      <span class="icon"><i class="flaticon-scalpel"></i></span>
-      <span class="icon"><i class="flaticon-construction"></i></span>
-      <span class="icon"><i class="flaticon-tool"></i></span>
-      <span class="icon"><i class="flaticon-blood-test"></i></span>
-      <span class="icon"><i class="flaticon-bandage"></i></span>
-      <span class="icon"><i class="flaticon-warning"></i></span>
-      <span class="icon"><i class="flaticon-stethoscope"></i></span>
-      <span class="icon"><i class="flaticon-syringe"></i></span>
+      <i class="flaticon-worldwide" v-if="animal.devices"></i>
+      <!-- <i class="flaticon-scalpel"></i> -->
+      <!-- <i class="flaticon-construction"></i> -->
+      <i class="flaticon-tool" v-if="animal.marks"></i>
+      <!-- <i class="flaticon-blood-test"></i> -->
+      <!-- <i class="flaticon-bandage"></i> -->
+      <!-- <i class="flaticon-warning"></i> -->
+      <!-- <i class="flaticon-stethoscope"></i> -->
+      <!-- <i class="flaticon-syringe"></i> -->
     </div>
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: 'AnimalCard',
 
@@ -67,21 +67,26 @@ export default {
 }
 
 .card-content {
-  padding: 5px;
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding: 0 0 4px 0;
 }
 
-.media-left > p {
-  padding-left: 16px;
-}
-
-.level {
-  margin-top: 4px;
+.media {
+  padding: 4px 8px 0 12px;
+  margin: 0 0 8px 0 !important;
+  align-items: center;
 }
 
 .under-card {
-  /* border-top: 1px solid grey; */
-  background-color: rgba(0, 0, 0, .05)
-  /* padding: 2px 8px; */
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .05);
+  padding: 2px 0;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 1.5em;
+  color: #b1b1b1;
+  /* background-color: yellow; */
+  line-height: 1.1;
 }
 </style>
