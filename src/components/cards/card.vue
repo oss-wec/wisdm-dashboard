@@ -39,7 +39,7 @@
       </nav>
     </div>
 
-    <div class="under-card">
+    <div class="under-card" v-if="animal.devices && animal.marks">
       <i class="flaticon-worldwide" v-if="animal.devices"></i>
       <!-- <i class="flaticon-scalpel"></i> -->
       <!-- <i class="flaticon-construction"></i> -->
@@ -84,7 +84,7 @@ export default {
 
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
-  font-size: 1.5em;
+  font-size: 1.1em;
   color: #b1b1b1;
   /* background-color: yellow; */
   line-height: 1.1;
