@@ -1,36 +1,59 @@
 <template>
-  <div class="animal-card">
-    <div class="card-left">
-      <div class="ndow-id">{{ animal.ndow_id }}</div>
-      <div class="dates">
-        <div class="date">Jan 28</div>
-        <div class="year">2017</div>
+  <div class="card">
+    <div class="card-content">
+      <div class="media">
+        <div class="media-left">
+          <p class="title is-4">{{ animal.ndow_id }}</p>
+        </div>
+        <div class="media-content has-text-right">
+          <p class="title is-6">{{ animal.species }}</p>
+          <p class="subtitle is-6 has-text-grey">{{ animal.project }}</p>
+        </div>
       </div>
+
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <!-- <p class="heading">Date</p> -->
+            <p>2017-01-01</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <!-- <p class="heading">Age</p> -->
+            <p>{{ animal.age }}</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <!-- <p class="heading">Sex</p> -->
+            <p>{{ animal.sex }}</p>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <!-- <p class="heading">Status</p> -->
+            <p>{{ animal.status }}</p>
+          </div>
+        </div>
+      </nav>
     </div>
-    <div class="card-right">
-      <div class="right-top">
-        <div class="species">{{ animal.species }}</div>
-        <div class="project">{{ animal.project }}</div>
-      </div>
-      <div class="right-bottom">
-        <div class="metric">
-          <div class="field">Age</div>
-          <div class="data">{{ animal.age }}</div>
-        </div>
-        <div class="metric">
-          <div class="field">Sex</div>
-          <div class="data">{{ animal.sex }}</div>
-        </div>
-        <div class="metric">
-          <div class="field">Status</div>
-          <div class="data">{{ animal.status }}</div>
-        </div>
-      </div>
+
+    <div class="under-card">
+      <i class="flaticon-worldwide" v-if="animal.devices"></i>
+      <!-- <i class="flaticon-scalpel"></i> -->
+      <!-- <i class="flaticon-construction"></i> -->
+      <i class="flaticon-tool" v-if="animal.marks"></i>
+      <!-- <i class="flaticon-blood-test"></i> -->
+      <!-- <i class="flaticon-bandage"></i> -->
+      <!-- <i class="flaticon-warning"></i> -->
+      <!-- <i class="flaticon-stethoscope"></i> -->
+      <!-- <i class="flaticon-syringe"></i> -->
     </div>
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: 'AnimalCard',
 
@@ -39,100 +62,31 @@ export default {
 </script>
 
 <style scoped>
-.animal-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-/*   border: 1px solid #2B8B8F; */
-  border-top: 6px solid #2B8B8F;
-  border-radius: 4px;
-  min-height: 100px;
-  padding: 4px;
-  margin-bottom: 10px;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+.card {
+  margin-bottom: 5px;
 }
 
-.animal-card:hover {
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+.card-content {
+  padding: 0 0 4px 0;
 }
 
-.card-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30%;
-  /* border: 1px solid red; */
-  box-shadow: 10px 0px 3px -10px #bababa;
+.media {
+  padding: 4px 8px 0 12px;
+  margin: 0 0 8px 0 !important;
+  align-items: center;
 }
 
-.ndow-id {
-  color: #2B8B8F;
+.under-card {
+  border-top: 1px solid rgba(0, 0, 0, .1);
+  background-color: rgba(0, 0, 0, .05);
+  padding: 2px 0;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {
   font-size: 1.5em;
-  /* text-align: center; */
-  letter-spacing: .1em;
-  font-weight: 600;
-  transform: scale(1, 1.5) 
-}
-
-.year {
-  color: #bababa;
-  font-size: 1.125em;
-  letter-spacing: .15em;
-  font-weight: 600;
-}
-
-.date {
-  color: #bababa;
-  font-size: .875em;
-  letter-spacing: .1em;
-}
-
-.card-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 70%;
-  /* border: 1px solid blue; */
-}
-
-.right-top {
-  text-align: right;
-}
-
-.species {
-  color: #2B8B8F;
-  letter-spacing: .05em;
-  font-weight: 600;
-}
-
-.project {
-  color: #bababa;
-  letter-spacing: .05em;
-}
-
-.right-bottom {
-  display: flex;
-  justify-content: space-around;
-}
-
-.metric {
-  color: #bababa;
-  font-size: .75em;
-  letter-spacing: .08em;
-  text-align: center;
-}
-
-.field {
-  text-transform: uppercase;
-  border-bottom: 1px solid #bababa;
-  padding-bottom: 2px;
-/*   font-size: .75em; */
-}
-
-.data {
-  text-transform: capitalize;
-  padding-top: 2px;
+  color: #b1b1b1;
+  /* background-color: yellow; */
+  line-height: 1.1;
 }
 </style>
