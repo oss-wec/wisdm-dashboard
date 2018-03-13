@@ -1,9 +1,7 @@
 <template>
   <div class="dash">
     <cards />
-    <!-- <div class="map-container"> -->
-      <leaflet class="map-container" />
-    <!-- </div> -->
+    <leaflet class="map-container" />
   </div>
 </template>
 
